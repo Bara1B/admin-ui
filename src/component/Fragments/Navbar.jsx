@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icon } from "../Elements/Icon";
+import Logo from "../Elements/Logo";
 
 const Navbar = () => {
   const menus = [
@@ -50,7 +51,9 @@ const Navbar = () => {
   return (
     <nav className="bg-defaultBlack text-special-bg2 sm:w-72 w-36 min-h-screen px-7 py-12 flex flex-col justify-between">
       <div>
-        <div className="flex justify-center mb-10">Logo</div>
+        <div className="flex justify-center mb-10">
+          <Logo variant="text-white text-sm sm:text-2x1"/>
+        </div>
         {menus.map((menu) => (
           // eslint-disable-next-line react/jsx-key
           <Link to={menu.link}>
