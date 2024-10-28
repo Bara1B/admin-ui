@@ -21,6 +21,30 @@ const Navbar = () => {
       icon: <Icon.Transaction />,
       label: "Transaction",
     },
+    {
+      id: "bill",
+      link: "/bill",
+      icon: <Icon.Bill />,
+      label: "Bill",
+    },
+    {
+      id: "expenses",
+      link: "/expenses",
+      icon: <Icon.Expenses />,
+      label: "Expenses",
+    },
+    {
+      id: "goal",
+      link: "/goal",
+      icon: <Icon.Goal />,
+      label: "Goal",
+    },
+    {
+      id: "setting",
+      link: "/setting",
+      icon: <Icon.Setting />,
+      label: "Setting",
+    },
   ];
 
   return (
@@ -28,6 +52,7 @@ const Navbar = () => {
       <div>
         <div className="flex justify-center mb-10">Logo</div>
         {menus.map((menu) => (
+          // eslint-disable-next-line react/jsx-key
           <Link to={menu.link}>
             <div className="flex hover:bg-special-bg3 hover:text-white px-4 py-3 rounded-md">
               <div className="mx-auto sm:mx-0">{menu.icon}</div>
@@ -39,7 +64,7 @@ const Navbar = () => {
       <div className="sticky bottom-12">
         <Link to="/logout">
           <div className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white">
-            <div className="mx-auto sm:mx-0">D</div>
+            <div className="mx-auto sm:mx-0"><Icon.Logout/></div>
             <div className="ms-3 hidden sm:block">Logout</div>
           </div>
         </Link>
