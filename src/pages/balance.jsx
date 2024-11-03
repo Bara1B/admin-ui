@@ -1,36 +1,16 @@
-import Card from "../component/Elements/Card";
+import CardB from "../component/Elements/CardB";
 import MainLayout from "../component/Layouts/MainLayout";
 
 const BalancePage = () => {
   return (
     <MainLayout type="balance">
-      {/* top content start*/}
-      <div className="mb-8 sm:flex sm:gap-6">
-        <div className="sm:w-1/3">
-          <Card />
-        </div>
-        <div className="sm:w-1/3">
-          <Card />
-        </div>
-        <div className="sm:w-1/3">
-          <Card />
-        </div>
-      </div>
-      {/* top content end*/}
-      {/* bottom content start*/}
-      <div className="mb-8 sm:flex sm:gap-6">
-        <div className="sm:w-1/3">
-          <Card />
-        </div>
-        <div className="sm:w-1/3">
-          <Card />
-        </div>
-        <div className="sm:w-1/3">
-          <Card />
-        </div>
-      </div>
+      <h1 className="text-gray-500 text-2xl mb-4">Balances</h1>
 
-      {/* bottom content end*/}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <CardB cardTitle="Credit Card" cardType="Master Card" logoSrc="/images/mc.png" accountNumber="1234 5678 9012 8***" totalAmount="$25,000" />
+        <CardB cardTitle="Checking" cardType="All Bank Ltd" logoSrc="/images/visa.png" accountNumber="693 456 69 9****" totalAmount="$25,000" />
+        <CardB cardTitle="Savings" cardType="Brsc Bank Ltd" accountNumber="133 456 886 8***" totalAmount="$25,000" /> {/* logoSrc not passed */}
+      </div>
     </MainLayout>
   );
 };

@@ -33,7 +33,7 @@ const FormSignIn = () => {
                 />
               </div> */}
               <div className="mb-3">
-                <CheckBox /> keep me sign in 
+                <CheckBox /> Keep me Sign in
               </div>
               <Button variant="bg-primary w-full text-white" type="submit"> Login </Button>
             </form>
