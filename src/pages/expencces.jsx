@@ -22,9 +22,10 @@ const ExpenccesPage = () => {
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
         <CardC />
         <CardC
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, eos nisi praesentium magni in placeat dolores quo aperiam, tenetur corporis est vitae eveniet distinctio rem illum accusantium, repellendus consectetur sed!"
+
         />
-        <CardC />
+        <CardC
+          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, eos nisi praesentium magni in placeat dolores quo aperiam, tenetur corporis est vitae eveniet distinctio rem illum accusantium, repellendus consectetur sed!" />
       </div>
     </MainLayout>
   );
