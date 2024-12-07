@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ForgotpwPage from "./pages/forgotpw";
 import DashboardPage from "./pages/dashboard";
 import BalancePage from "./pages/balance";
-import ExpenccesPage from "./pages/expencces";
+import ExpensesPage from "./pages/expenses";
 
 // up
 const App = () => {
@@ -32,9 +32,9 @@ const App = () => {
       element: <BalancePage />,
     },
     {
-      path: "/expencces",
-      element: <ExpenccesPage />
-    }
+      path: "/expenses",
+      element: <ExpensesPage />,
+    },
   ]);
 
   return (

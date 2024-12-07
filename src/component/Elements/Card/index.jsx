@@ -2,19 +2,19 @@ const Card = (props) => {
   const { title = false, desc, variant } = props;
 
   return (
-    <div className={`flex flex-col flex-1 mb-6 ${variant}`}>
+    <div className={`flex flex-col flex-1 mb-4 ${variant}`}>
       {title && (
-        title.length === 1 ? (
-          <div className="hidden md:block md:text-lg md:text-gray-02 md:mb-4">
-            {title}
-          </div>
-        ) : (
-          <div className="text-lg text-gray-02 mb-4">
-            {title}
-          </div>
-        )
+        <>
+          {typeof title === "string" && title.length === 1 ? (
+            <div className="hidden md:block text-base text-gray-02 mb-2">
+              {title}
+            </div>
+          ) : (
+            <div className="text-base text-gray-02 mb-3">{title}</div>
+          )}
+        </>
       )}
-      <div className="bg-white rounded-lg px-6 py-5 shadow-xl flex-1">
+      <div className="bg-white rounded-lg px-4 py-4 shadow-md flex-1">
         {desc}
       </div>
     </div>
