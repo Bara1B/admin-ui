@@ -1,11 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { Icon } from "../Elements/Icon";
 import Logo from "../Elements/Logo";
+// import { useState } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/themeContext";
 import { AuthContext } from "../../context/authContext";
-import axios from "axios";
 import { NotifContext } from "../../context/notifContext";
+import axios from "axios";
 
 const Navbar = () => {
   const themes = [
@@ -16,6 +17,7 @@ const Navbar = () => {
     { name: "theme-brown", bgcolor: "bg-[#8B4513]", color: "#8B4513" },
   ];
 
+  // const [theme, setTheme] = useState(themes[0]);
   const { theme, setTheme } = useContext(ThemeContext);
   const { setIsLoggedIn, setName, name } = useContext(AuthContext);
   const { setMsg, setOpen, setIsLoading } = useContext(NotifContext);
@@ -97,19 +99,14 @@ const Navbar = () => {
 
   return (
     <div className="bg-defaultBlack">
-      <nav className="sticky-top 0 text-special-bg2 sm:w-72 w-36 min-h-screen px-7 py-12 flex flex-col justify-between">
+      <nav className="sticky top-0 text-special-bg2 sm:w-72 w-36 min-h-screen px-7 py-12 flex flex-col justify-between">
         <div>
           <NavLink to="/" className="flex justify-center mb-10">
             <Logo variant="text-primary text-sm sm-text-2xl" />
           </NavLink>
           {menus.map((menu) => (
             // eslint-disable-next-line react/jsx-key
-            <NavLink
-              key={menu.id}
-              to={menu.link}
-              className={({ isActive }) =>
-              (isActive
-                ? "flex bg-primary text-white font-bold px-4 py-3 rounded-sm zoom-in" : "flex hover:bg-special-bg3 hover:text-white px-4 py-3 rounded-md zoom-in")}>
+            <NavLink key={menu.id} to={menu.link} className={({ isActive }) => (isActive ? "flex bg-primary text-white font-bold px-4 py-3 rounded-md zoom-in" : "flex hover:bg-special-bg3 hover:text-white px-4 py-3 rounded-md zoom-in")}>
               <div className="mx-auto sm:mx-0">{menu.icon}</div>
               <div className="ms-3 hidden sm:block">{menu.label}</div>
             </NavLink>
@@ -118,17 +115,11 @@ const Navbar = () => {
         <div className="md:flex md:gap-2">
           Themes
           {themes.map((t) => (
-            <div
-              key={t.name}
-              className={`${t.bgcolor} md:w-6 h-6 rounded-md cursor-pointer mb-2 zoom-in`}
-              onClick={() => setTheme(t)}
-            ></div>
+            <div key={t.name} className={`${t.bgcolor} md:w-6 h-6 rounded-md cursor-pointer mb-2 zoom-in`} onClick={() => setTheme(t)}></div>
           ))}
         </div>
-        <div className="sticky bottom-12">
-          <NavLink
-            onClick={Logout}
-            className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white zoom-in">
+        <div>
+          <NavLink onClick={Logout} className="flex bg-special-bg3 px-4 py-3 rounded-md hover:text-white zoom-in">
             <div className="mx-auto sm:mx-0 text-primary">
               <Icon.Logout />
             </div>

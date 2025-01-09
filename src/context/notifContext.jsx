@@ -10,11 +10,5 @@ export const NotifContextProvider = ({ children }) => {
     //state untuk backdrop loader
     const [isLoading, setIsLoading] = useState(false);
 
-    return (
-        <NotifContext.Provider
-            value={{ msg, setMsg, open, setOpen, isLoading, setIsLoading }}
-        >
-            {children}
-        </NotifContext.Provider>
-    );
+    return <NotifContext.Provider value={{ msg, setMsg, open, setOpen, isLoading, setIsLoading }}>{children}</NotifContext.Provider>;
 };
