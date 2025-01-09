@@ -116,11 +116,44 @@ const AuthLayout = (props) => {
         )}
 
         {/* Theme Switcher */}
-        <div style={{ marginTop: "20px", textAlign: "center" }}>
-          <button onClick={toggleMode} className="text-sm font-medium">
-            Switch to {mode ? "Light" : "Dark"} Mode
+        <div className="flex justify-center mt-5">
+          <button onClick={toggleMode} className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700">
+            {mode ? (
+              // Ikon Matahari (Saat mode gelap aktif)
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6 text-yellow-400"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 3.75v1.5m0 13.5v1.5m8.25-8.25h-1.5M4.5 12H3m15.364-6.364l-1.061 1.061M7.697 16.303l-1.061 1.061m11.728 0-1.061-1.061M7.697 7.697 6.636 6.636M12 9.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5z"
+                />
+              </svg>
+            ) : (
+              // Ikon Bulan (Saat mode terang aktif)
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6 text-blue-400"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21.752 15.002A9.718 9.718 0 0 1 12.003 21c-5.385 0-9.75-4.366-9.75-9.75a9.718 9.718 0 0 1 6.002-9.749c-.25.962-.38 1.966-.38 2.999 0 5.386 4.366 9.752 9.752 9.752 1.032 0 2.037-.13 2.999-.38z"
+                />
+              </svg>
+            )}
           </button>
         </div>
+
       </motion.div>
     </div>
   );

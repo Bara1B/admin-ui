@@ -13,6 +13,7 @@
     --bg-dark: #000000;
     --text-light: #f4f5f7;
     --text-dark: #060505;
+    --text-gray: #808080;
   }
 }
 
@@ -39,7 +40,7 @@
 
 .dark-mode {
   background-color: var(--bg-dark);
-  color: var(--text-light);
+  color: var(--text-gray);
 }
 .zoom-in {
   @apply duration-500 hover:translate-y-1 hover:scale-110;
